@@ -42,3 +42,11 @@
             card.style.transition = 'all 0.6s ease';
             observer.observe(card);
         });
+
+          document.querySelectorAll('.faq-question').forEach((question) => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        // Alterna entre mostrar e esconder a resposta
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
