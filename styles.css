@@ -117,6 +117,8 @@ body {
   align-items: center;
   gap: 2rem;
   text-align: center;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .hero-text h1 {
@@ -391,6 +393,7 @@ body {
   color: #666;
   line-height: 1.6;
 }
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -514,64 +517,32 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 0.8rem 1.5rem;
+/* ===== MEDIA QUERIES RESPONSIVAS MELHORADAS ===== */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
   }
 
-  .logo {
-    font-size: 1.5rem;
+  .hero-text p {
+    font-size: 1.1rem;
   }
 
-  .logo img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .logo h2 {
-    margin-left: 15px;
-  }
-
-  .nav-menu {
-    gap: 1.5rem;
-  }
-
-  .nav-menu a {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  .whatsapp-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-
-  .hero-content {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .hero-text {
-    flex: 1;
-  }
-
-  .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+  .hero-image img {
+    width: clamp(150px, 20vw, 220px);
+    height: clamp(150px, 20vw, 220px);
   }
 }
 
-@media (max-width: 480px) {
+/* Tablets */
+@media (max-width: 768px) {
   .nav-container {
-    padding: 0.5rem 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+    padding: 0.8rem 1rem;
   }
 
   .logo {
-    font-size: 1.2rem;
-    order: 1;
+    font-size: 1.4rem;
   }
 
   .logo img {
@@ -581,53 +552,71 @@ body {
 
   .logo h2 {
     margin-left: 10px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .nav-menu {
-    order: 3;
-    width: 100%;
-    justify-content: center;
     gap: 1rem;
-    margin-top: 0.5rem;
   }
 
   .nav-menu a {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
   }
 
   .whatsapp-btn {
-    order: 2;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 
   .hero {
-    padding: 3rem 1rem;
+    margin-top: 120px;
+    padding: 3rem 1.5rem;
+    min-height: 50vh;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    max-width: 100%;
   }
 
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
   }
 
   .hero-text p {
     font-size: 1rem;
+    max-width: 100%;
   }
 
   .hero-image img {
-    width: 150px;
-    height: 150px;
+    width: clamp(140px, 30vw, 180px);
+    height: clamp(140px, 30vw, 180px);
+  }
+
+  .about-section h2,
+  .services-container h2,
+  .contact-container h2 {
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 320px) {
+/* Smartphones grandes */
+@media (max-width: 480px) {
   .nav-container {
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0.8rem;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
   }
 
   .logo {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    justify-content: center;
+    order: 1;
   }
 
   .logo img {
@@ -637,30 +626,209 @@ body {
 
   .logo h2 {
     margin-left: 8px;
+    font-size: 1.2rem;
+  }
+
+  .nav-menu {
+    order: 3;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .whatsapp-btn {
+    order: 2;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+    align-self: center;
+  }
+
+  .hero {
+    margin-top: 140px;
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero-image img {
+    width: clamp(120px, 35vw, 150px);
+    height: clamp(120px, 35vw, 150px);
+  }
+
+  .about-section,
+  .services-section,
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-section h2,
+  .services-container h2,
+  .contact-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .images-container {
+    gap: 1rem;
+  }
+
+  .image-card {
+    width: 280px;
+    height: 180px;
+  }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 360px) {
+  .nav-container {
+    padding: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .logo h2 {
+    margin-left: 6px;
     font-size: 1rem;
   }
 
   .nav-menu a {
-    padding: 0.2rem 0.4rem;
+    padding: 0.25rem 0.4rem;
     font-size: 0.7rem;
   }
 
   .whatsapp-btn {
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 0.6rem;
     font-size: 0.7rem;
   }
 
   .hero {
-    padding-top: 170px;
-    padding-bottom: 1.5rem;
+    margin-top: 130px;
+    padding: 1.5rem 0.5rem;
   }
 
-  .hero h1 {
-    font-size: 1.8rem;
+  .hero-text h1 {
+    font-size: 1.5rem;
   }
 
-  .hero p {
+  .hero-text p {
+    font-size: 0.85rem;
+  }
+
+  .hero-image img {
+    width: clamp(100px, 40vw, 130px);
+    height: clamp(100px, 40vw, 130px);
+  }
+
+  .about-section h2,
+  .services-container h2,
+  .contact-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .image-card {
+    width: 250px;
+    height: 160px;
     font-size: 0.9rem;
+  }
+
+  .image-card i {
+    font-size: 2rem;
+  }
+}
+
+/* Smartphones muito pequenos */
+@media (max-width: 320px) {
+  .nav-container {
+    padding: 0.4rem;
+  }
+
+  .logo {
+    font-size: 0.9rem;
+  }
+
+  .logo img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .logo h2 {
+    margin-left: 5px;
+    font-size: 0.9rem;
+  }
+
+  .nav-menu a {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.65rem;
+  }
+
+  .whatsapp-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  .hero {
+    margin-top: 120px;
+    padding: 1rem 0.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero-text p {
+    font-size: 0.8rem;
+  }
+
+  .hero-image img {
+    width: clamp(90px, 45vw, 120px);
+    height: clamp(90px, 45vw, 120px);
+  }
+
+  .image-card {
+    width: 220px;
+    height: 140px;
+    font-size: 0.8rem;
+  }
+
+  .image-card i {
+    font-size: 1.5rem;
   }
 }
 
